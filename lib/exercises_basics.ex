@@ -112,4 +112,30 @@ defmodule ExercisesBasic do
   def min() do
     Enum.min([4, 7, 1, 9, 2])
   end
+
+  @doc """
+  Detect the year is leap year
+  """
+  def leap_year?(year) when rem(year, 400) == 0, do: true
+  def leap_year?(year) when rem(year, 100) == 0, do: false
+  def leap_year?(year) when rem(year, 4) == 0, do: true
+  def leap_year?(_year), do: false
+
+  @doc """
+  Return the value of a color band
+  """
+  def code(color) do
+    case color do
+      :black -> 0
+      :brown -> 1
+      :red -> 2
+      :orange -> 3
+      :yellow -> 4
+      :green -> 5
+      :blue -> 6
+      :violet -> 7
+      :grey -> 8
+      :white -> 9
+    end
+  end
 end

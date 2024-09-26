@@ -81,4 +81,81 @@ defmodule ExercisesBasicTest do
   test "Find the minimum value from the list" do
     assert M.min() == 1
   end
+
+  test "not divisible by 4 is common year" do
+    # expects nil or false
+    refute M.leap_year?(2015)
+  end
+
+  test "year divisible by 2, not divisible by 4 is common year" do
+    refute M.leap_year?(1970)
+  end
+
+  test "year divisible by 4, not divisible by 100 is a leap year" do
+    assert M.leap_year?(1996)
+  end
+
+  test "year divisible 4 and 5 is a leap year" do
+    assert M.leap_year?(1960)
+  end
+
+  test "year divisible by 100, not divisible by 400 is common year" do
+    refute M.leap_year?(2100)
+  end
+
+  test "year divisible by 100 but not by 3 is common year" do
+    refute M.leap_year?(1900)
+  end
+
+  test "year divisible by 400 is a leap year" do
+    assert M.leap_year?(2000)
+  end
+
+  test "year divisible by 400 but not by 125 is a leap year" do
+    assert M.leap_year?(2400)
+  end
+
+  test "year divisible by 200, not by 400 is common year" do
+    refute M.leap_year?(1800)
+  end
+
+  test "returns black color code" do
+    assert M.code(:black) == 0
+  end
+
+  test "returns brown color code" do
+    assert M.code(:brown) == 1
+  end
+
+  test "returns red color code" do
+    assert M.code(:red) == 2
+  end
+
+  test "returns orange color code" do
+    assert M.code(:orange) == 3
+  end
+
+  test "returns yellow color code" do
+    assert M.code(:yellow) == 4
+  end
+
+  test "returns green color code" do
+    assert M.code(:green) == 5
+  end
+
+  test "returns blue color code" do
+    assert M.code(:blue) == 6
+  end
+
+  test "returns violet color code" do
+    assert M.code(:violet) == 7
+  end
+
+  test "returns grey color code" do
+    assert M.code(:grey) == 8
+  end
+
+  test "returns white color code" do
+    assert M.code(:white) == 9
+  end
 end
