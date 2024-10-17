@@ -9,6 +9,8 @@ defmodule Countdown do
     spawn(fn -> :os.cmd("say #{text}" |> to_charlist) end)
   end
 
+  @spec timer() :: ({:cont, any()} | {:halt, any()} | {:suspend, any()}, any() ->
+                      {:halted, any()} | {:suspended, any(), (any() -> any())})
   def timer do
     Stream.resource(
       fn ->
